@@ -43,6 +43,21 @@
           </div>
 
           <div class="mb-3">
+            <label for="userType" class="form-label">Select User Type</label>
+            <p class="small text-muted mb-2">
+              Basic User   – 1,000<br>
+              Premium User – 10,000<br>
+              VIP User     – 10,000,000
+            </p>
+            <select id="userType" name="userType" class="form-select" required>
+              <option value="basic">Basic User</option>
+              <option value="premium">Premium User</option>
+              <option value="vip">VIP</option>
+            </select>
+          </div>
+
+
+          <div class="mb-3">
             <label for="signupPin" class="form-label">PIN</label>
             <input type="password" pattern="\d*" class="form-control" id="signupPin1" placeholder="Set a 4-digit PIN"
               maxlength="4" required />
@@ -82,7 +97,8 @@
           </div>
 
           <input type="text" class="form-control mb-2" id="accountName" placeholder="Name will appear here" readonly />
-          <input type="text" class="form-control mb-2" id="accountNum" placeholder="Account Number will appear here" readonly />
+          <input type="text" class="form-control mb-2" id="accountNum" placeholder="Account Number will appear here"
+            readonly />
           <input type="text" class="form-control mb-4" id="balance" placeholder="Balance will appear here" readonly />
 
           <!-- Amount Input -->

@@ -2,17 +2,30 @@ let acc_tag = 2025000
 let accounts = {}
 
 function signup() {
-    sPin1 = document.getElementById("signupPin1").value;
-    sPin2 = document.getElementById("signupPin2").value;
-    accAge = document.getElementById("signupAge").value;
-    accName = document.getElementById("signupName").value;
+    let sPin1 = document.getElementById("signupPin1").value;
+    let sPin2 = document.getElementById("signupPin2").value;
+    let accAge = document.getElementById("signupAge").value;
+    let accName = document.getElementById("signupName").value;
+    let accType = document.getElementById("userType").value;
+    let initialAmt = 0;
+    switch(accType){
+        case "basic":
+            initialAmt = 1000;
+            break
+        case "premium":
+            initialAmt = 10000;
+            break
+        case "vip":
+            initialAmt = 10000000;
+            break 
+    }
     if (sPin1 == sPin2) {
         if (accAge >= 18) {
             accounts[++acc_tag] = {
                 name: accName,
                 age: accAge,
                 pin: sPin1,
-                balance: 0
+                balance: initialAmt
             };
             alert(`Welcome ${accName}! \nYour unique Account Number is ${acc_tag}`)
             const cardHtml = `
